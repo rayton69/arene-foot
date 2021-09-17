@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ballon : MonoBehaviour
 {
-    public affichagescorenew Controller;
+    private int but = 0;
     private void OnTriggerEnter(Collider other) {
         if ( other.gameObject.tag == "lignebut") {
-            Controller.ButMarquer();
+            Debug.Log("BUUUUUUUUUUUUT");
+            but++;
         }
     }   
     // Start is called before the first frame update
