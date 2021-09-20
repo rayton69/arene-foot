@@ -15,11 +15,19 @@ namespace UnityStandardAssets.Vehicles.Ball
         private Vector3 camForward; // The current forward direction of the camera
         private bool jump; // whether the jump button is currently pressed
 
+        public BallUserControl(Ball ball)
+        {
+            this.ball = ball;
+        }
+
+        public Ball Ball { get => Ball1; set => Ball1 = value; }
+        public Ball Ball1 { get => ball; set => ball = value; }
+        public Ball Ball2 { get => ball; set => ball = value; }
 
         private void Awake()
         {
             // Set up the reference.
-            ball = GetComponent<Ball>();
+            Ball = GetComponent<Ball>();
 
 
             // get the transform of the main camera
@@ -62,7 +70,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         private void FixedUpdate()
         {
             // Call the Move function of the ball controller
-            ball.Move(move, jump);
+            Ball.Move(move, jump);
             jump = false;
         }
     }
